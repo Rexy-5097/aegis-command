@@ -1,16 +1,87 @@
-# React + Vite
+# 🛡️ Aegis Command System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Next-Gen Tactical Command Interface**  
+> *Offline-First | AI-Powered | Field-Ready*
 
-Currently, two official plugins are available:
+Aegis Command is a cutting-edge tactical situational awareness dashboard designed for field operations. It combines local AI processing with robust offline-first architecture to provide real-time threat detection and strategic intelligence without relying on cloud connectivity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Aegis Command Interface](https://via.placeholder.com/800x450?text=Aegis+Command+System)
 
-## React Compiler
+## 🚀 Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **👁️ Edge AI Vision**: Real-time object detection running entirely in the browser using `@xenova/transformers`. No images are sent to the cloud for inference.
+- **📡 Offline-First Architecture**: Powered by **PouchDB**, ensuring full functionality in disconnected environments with automatic synchronization when connectivity is restored.
+- **🗺️ Tactical Visualization**: Interactive headers, threat feeds, and status monitors built with a "defense-grade" UI aesthetic.
+- **⚡ High Performance**: Built on **Vite** + **React** for near-instant load times and 60fps rendering.
 
-## Expanding the ESLint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Core**: React 19, Vite
+- **Styling**: TailwindCSS, clsx, tailwind-merge, Lucide React
+- **AI/ML**: Transformers.js (On-device inference)
+- **Data Layer**: PouchDB (Local-first sync)
+- **State Management**: React Hooks (useNetworkStatus, useSync)
+
+## 📂 System Structure
+
+```bash
+aegis-command/
+├── src/
+│   ├── components/
+│   │   ├── dashboard/       # Core operational views
+│   │   │   ├── CamFeed.jsx      # AI Vision integration & webcam
+│   │   │   ├── HQFeed.jsx       # Strategic intelligence stream
+│   │   │   ├── ThreatFeed.jsx   # Live detection logs
+│   │   │   └── NetworkStatus.jsx # Connection telemetry
+│   │   └── layout/          # Application shell (Sidebar, Header)
+│   ├── db/
+│   │   └── db.js            # PouchDB configuration & persistence logic
+│   ├── hooks/
+│   │   ├── useNetworkStatus.js # Online/Offline listeners
+│   │   └── useSync.js       # Data synchronization logic
+│   ├── services/
+│   │   └── azureService.js  # External cloud (mock/real) integrations
+│   └── utils/
+│       └── cotSerializer.js # Chain-of-thought data processing
+```
+
+## ⚡ Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Rexy-5097/aegis-command.git
+   cd aegis-command
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the command center**
+   ```bash
+   npm run dev
+   ```
+
+## 🔒 Security & Privacy
+
+- **Local Inference**: Camera feeds are processed locally. Video streams never leave the client device.
+- **Encrypted Sync**: (Roadmap) End-to-end encryption for peer-to-peer sync.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+*Mission Critical Systems // Unauthorized Access Prohibited*
